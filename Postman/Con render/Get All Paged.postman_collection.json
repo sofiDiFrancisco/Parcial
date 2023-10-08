@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "ab8c96dd-df85-4315-aede-834c20f44f25",
+		"name": "Get All Paged",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30193476"
+	},
+	"item": [
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas/1",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Sofía\",\r\n    \"apellido\": \"Di Francisco\",\r\n    \"dni\":39017641,\r\n    \"domicilio\":{\r\n        \"calle\":\"Rivas\",\r\n        \"numero\":174,\r\n        \"localidad\":{\r\n           \"id\": 1,\r\n        \"denominacion\": \"Maipu\"\r\n            }\r\n    },\r\n    \"libros\":[\r\n        {\r\n            \"titulo\":\"Los días de la Sombra\",\r\n            \"fecha\":\"2008\",\r\n            \"genero\":\"Novela\",\r\n            \"pagina\":400,\r\n            \"autores\":[\r\n                {\r\n                   \"id\": 1,\r\n                   \"nombre\": \"Liliana\",\r\n                   \"apellido\": \"Bodoc\",\r\n                   \"biografia\": \"Nació el 21 de julio de 1958 en la provincia de Santa Fe, y cuando tenía 6 años su familia se trasladó a Mendoza porque su padre iría a trabajar allí. Estudió Licenciatura en Letras en la Universidad Nacional de Cuyo y ejerció como docente de Literatura Española y Argentina en diversos colegios de la misma universidad​ a 30 kilómetros de la ciudad de San Luis, hasta su muerte producto de un paro cardíaco.\"\r\n                }\r\n            ]\r\n        } \r\n    ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"nombre\": \"Juan\",\r\n    \"apellido\": \"Peña\",\r\n    \"dni\":16256827,\r\n    \"domicilio\":{\r\n        \"calle\":\"Rivas\",\r\n        \"numero\":174,\r\n        \"localidad\":{\r\n           \"id\": 1,\r\n        \"denominacion\": \"Maipu\"\r\n            }\r\n    },\r\n    \"libros\":[\r\n        {\r\n            \"titulo\":\"El espejo africano\",\r\n            \"fecha\":\"2008\",\r\n            \"genero\":\"Novela\",\r\n            \"pagina\":400,\r\n            \"autores\":[\r\n                {\r\n                   \"id\": 1,\r\n                   \"nombre\": \"Liliana\",\r\n                   \"apellido\": \"Bodoc\",\r\n                   \"biografia\": \"Nació el 21 de julio de 1958 en la provincia de Santa Fe, y cuando tenía 6 años su familia se trasladó a Mendoza porque su padre iría a trabajar allí. Estudió Licenciatura en Letras en la Universidad Nacional de Cuyo y ejerció como docente de Literatura Española y Argentina en diversos colegios de la misma universidad​ a 30 kilómetros de la ciudad de San Luis, hasta su muerte producto de un paro cardíaco.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas/1",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas/search?filtro=a",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas/paged?page=0&size=5&sort=id,asc",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/personas/searchPaged?filtro=Di&page=0&size=5&sort=id,asc",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchPaged"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "Di"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/autores",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/autores/1",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"nombre\": \"Edgar\",\r\n     \"apellido\": \"Poe\",\r\n     \"biografia\": \"Fue un escritor, poeta, crítico y periodista romántico​ estadounidense, generalmente reconocido como uno de los maestros universales del relato corto, del cual fue uno de los primeros practicantes en su país. Fue renovador de la novela gótica, recordado especialmente por sus cuentos de terror. Considerado el inventor del relato detectivesco, contribuyó asimismo con varias obras al género emergente de la ciencia ficción.\"\r\n}"
+						},
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/autores",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Edgar Allan\",\r\n    \"apellido\": \"Poe\",\r\n    \"biografia\": \"Fue un escritor, poeta, crítico y periodista romántico estadounidense, generalmente reconocido como uno de los maestros universales del relato corto, del cual fue uno de los primeros practicantes en su país. Fue renovador de la novela gótica, recordado especialmente por sus cuentos de terror. Considerado el inventor del relato detectivesco, contribuyó asimismo con varias obras al género emergente de la ciencia ficción.\"\r\n}"
+						},
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/autores/2",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/autores/2",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidades",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/localidades",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/localidades/1",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"denominacion\": \"Maipu\"\r\n    }"
+						},
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/localidades",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"denominacion\": \"Las Heras\"\r\n}"
+						},
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/localidades/2",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://example-service-second.onrender.com/api/v1/localidades/2",
+							"protocol": "https",
+							"host": [
+								"example-service-second",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
